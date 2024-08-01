@@ -49,6 +49,9 @@ const firstNameField = document.getElementById('firstname');
 const lastNameField = document.getElementById('lastname');
 const passenger = document.getElementById('passenger');
 
+const priceTicket = document.getElementById('price-ticket');
+const ticket = document.getElementById('sale');
+
 // fase di elaborazione dati
 button.addEventListener('click', function(){
     const KmsValue =Kms.value;
@@ -67,24 +70,32 @@ button.addEventListener('click', function(){
     console.log('Nome completo passeggero:', fullName);
 
     let ticketPrice =(0.21 * KmsValue);
+    let typeTicket = '';
     
     if (ageValue >= 65 ) {
     // sconto del 40%
         discount = 0.4;
+        typeTicket = 'Biglietto over65';
+        console.log(typeTicket);
     }else if ( ageValue < 18 ){
     // socnto del 20%
         discount = 0.2;
+        typeTicket = 'Biglietto under18';
+        console.log(typeTicket);
     } else {
     // prezzo full
         discount = 0;
+        typeTicket = 'Biglietto standard';
     }
     // mi serve il risultato con due decimali
     let finalPrice = (ticketPrice * (1 - discount)).toFixed(2) + " €";
     // fase di output
     finalMessage = `Il prezzo finale del tuo biglietto è ${finalPrice}`;
     console.log(message , finalMessage);
-    paragraph.innerHTML = message + "<br>"+ finalMessage;
+    // paragraph.innerHTML = message + "<br>"+ finalMessage;
     passenger.innerText = fullName;
+    priceTicket.innerText = finalPrice;
+    ticket.innerText = typeTicket;
 
 })
 buttonReset.addEventListener('click', function(){
