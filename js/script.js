@@ -22,12 +22,47 @@ Randomizzare nel biglietto, un Codice Passeggero di 5 cifre che deve iniziare co
 // Importante, prima cosa verifico collegamenti
 console.log('ok Js');
 
-
+/*
+1- Prendo gli elementi dal Dom che mi possono servire
+2- Mi preparo le variabili che mi serviranno per fare il calcolo del prezzo finale
+3- Chiedo all'utente nome e cognome ed età
+4- mi preapro le casistiche di sconto da applicare in base all'età ricevuta
+5- calcolo il prezzo finale del biglietto
+6- stampo il risultato*/
 
 // fase di preparazione
-
+let discount = null;
+let message = "";
+let finalMessage;
+const Kms = document.getElementById('Kms');
+const age = document.getElementById('age');
+const button = document.getElementById('btn-produce')
 // fase di raccolta dati
 
 // fase di elaborazione dati
+button.addEventListener('click', function(){
+    const KmsValue =Kms.value;
+    const ageValue=age.value;
+    console.log('Km inseriti:',KmsValue);
+    console.log('Età utente:',ageValue);
+
+    let ticketPrice =(0.21 * KmsValue);
+    
+    if (ageValue >= 65 ) {
+    // sconto del 40%
+        discount = 0.4;
+    }else if ( ageValue < 18 ){
+    // socnto del 20%
+        discount = 0.2;
+    } else {
+    // prezzo full
+        discount = 0;
+    }
+    // mi serve il risultato con due decimali
+    let finalPrice = (ticketPrice * (1 - discount)).toFixed(2) + " €";
+    finalMessage = `Il prezzo finale del tuo biglietto è ${finalPrice}`;
+    console.log(message , finalMessage);
+
+})
 
 // fase di output
