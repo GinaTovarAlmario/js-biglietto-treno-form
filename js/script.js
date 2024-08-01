@@ -37,6 +37,7 @@ let finalMessage;
 const Kms = document.getElementById('Kms');
 const age = document.getElementById('age');
 const button = document.getElementById('btn-produce')
+const paragraph = document.getElementById('paragraph');
 // fase di raccolta dati
 
 // fase di elaborazione dati
@@ -60,9 +61,9 @@ button.addEventListener('click', function(){
     }
     // mi serve il risultato con due decimali
     let finalPrice = (ticketPrice * (1 - discount)).toFixed(2) + " €";
+    // fase di output
     finalMessage = `Il prezzo finale del tuo biglietto è ${finalPrice}`;
     console.log(message , finalMessage);
+    paragraph.innerHTML = message + "<br>"+ finalMessage;
 
 })
-
-// fase di output
