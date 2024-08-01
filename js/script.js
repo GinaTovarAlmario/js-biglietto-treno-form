@@ -46,7 +46,8 @@ const buttonReset = document.getElementById('btn-annull');
 const form =document.querySelector('form');
 
 const firstNameField = document.getElementById('firstname');
-const lastNameField =document.getElementById('lastname');
+const lastNameField = document.getElementById('lastname');
+const passenger = document.getElementById('passenger');
 
 // fase di elaborazione dati
 button.addEventListener('click', function(){
@@ -83,6 +84,7 @@ button.addEventListener('click', function(){
     finalMessage = `Il prezzo finale del tuo biglietto è ${finalPrice}`;
     console.log(message , finalMessage);
     paragraph.innerHTML = message + "<br>"+ finalMessage;
+    passenger.innerText = fullName;
 
 })
 buttonReset.addEventListener('click', function(){
