@@ -45,12 +45,25 @@ const paragraph = document.getElementById('paragraph');
 const buttonReset = document.getElementById('btn-annull');
 const form =document.querySelector('form');
 
+const firstNameField = document.getElementById('firstname');
+const lastNameField =document.getElementById('lastname');
+
 // fase di elaborazione dati
 button.addEventListener('click', function(){
     const KmsValue =Kms.value;
     const ageValue=age.value;
+
+    const firstName = firstNameField.value.trim();
+    const lastName = lastNameField.value.trim();
+
     console.log('Km inseriti:',KmsValue);
-    console.log('Età utente:',ageValue);
+    console.log('Età passeggero:',ageValue);
+
+    console.log('Nome passeggero', firstName);
+    console.log('Cognome passeggero:', lastName);
+
+    const fullName = `${firstName} ${lastName}`;
+    console.log('Nome completo passeggero:', fullName);
 
     let ticketPrice =(0.21 * KmsValue);
     

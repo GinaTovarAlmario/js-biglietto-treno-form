@@ -7,34 +7,59 @@
     <meta name="project" content="Js-form">
 
     <title>TrenoBooleano</title>
-    <!-- inclusione libreria Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <!-- inclusione libreria bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <form>
-        <fieldset>
-            <legend>Nome Cognome</legend>
-            <input type="text" id="firstname" placeholder="Inserisci nome">
-            <input type="text" id="lastname" placeholder="Inserisci cognome">
-        </fieldset>
-        <fieldset>
-            <legend>Km da Percorrere</legend>
-            <input type="number" id="Kms" placeholder="Inserisci numero km">
-        </fieldset>
-        <fieldset>
-            <legend>Fascia d'età</legend>
-            <input type="number" id="age" placeholder="scrivi la tua età">
-            <!-- <select class="form-select" id="rangeAge" aria-label="Default select example">
-                <option selected>Minorenne</option>
-                <option value="1">Adulto</option>
-                <option value="2">Senior</option>
-              </select> -->
-        </fieldset>
-        <button type="button" id="btn-produce">Genera</button>
-        <button type="button" id="btn-annull">Annulla</button>
-    </form>
-    <p id="paragraph"></p>
-    <script src="js/script.js"></script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h1 class="mt-3 mb-3">Calcola il prezzo del tuo Biglietto</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="card w-75 text-center border border-warning bg-secondary-subtle">
+                    <div class="card-body">
+                        <form>
+                            <fieldset>
+                                <legend>Nome Cognome</legend>
+                                <input type="text" id="firstname" placeholder="Inserisci nome">
+                                <input type="text" id="lastname" class="mt-2 mt-md-0" placeholder="Inserisci cognome">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Km da Percorrere</legend>
+                                <input type="number" id="Kms" placeholder="Inserisci numero km">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Fascia d'età</legend>
+                                <input type="number" id="age" placeholder="scrivi la tua età">
+                                <!-- <select class="form-select" id="rangeAge" aria-label="Default select example">
+                                    <option selected>Minorenne</option>
+                                    <option value="1">Adulto</option>
+                                    <option value="2">Senior</option>
+                                  </select> -->
+                            </fieldset>
+                            <button type="button" id="btn-produce" class="mt-3 btn btn-warning">Genera</button>
+                            <button type="button" id="btn-annull" class="mt-3 btn btn-warning">Annulla</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center mt-3">
+                <div class="card w-75 text-center border border-warning bg-secondary-subtle">
+                    <div class="card-body">
+                        <p id="paragraph"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
