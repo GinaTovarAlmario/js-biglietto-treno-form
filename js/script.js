@@ -34,11 +34,16 @@ console.log('ok Js');
 let discount = null;
 let message = "";
 let finalMessage;
+
+// fase di raccolta dati
 const Kms = document.getElementById('Kms');
 const age = document.getElementById('age');
-const button = document.getElementById('btn-produce')
+const button = document.getElementById('btn-produce');
+
 const paragraph = document.getElementById('paragraph');
-// fase di raccolta dati
+
+const buttonReset = document.getElementById('btn-annull');
+const form =document.querySelector('form');
 
 // fase di elaborazione dati
 button.addEventListener('click', function(){
@@ -66,4 +71,7 @@ button.addEventListener('click', function(){
     console.log(message , finalMessage);
     paragraph.innerHTML = message + "<br>"+ finalMessage;
 
+})
+buttonReset.addEventListener('click', function(){
+    form.reset();
 })
