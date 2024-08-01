@@ -52,6 +52,10 @@ const passenger = document.getElementById('passenger');
 const priceTicket = document.getElementById('price-ticket');
 const ticket = document.getElementById('sale');
 
+const carriageNumber = document.getElementById('carrozza');
+const codeCp = document.getElementById('code');
+
+
 // fase di elaborazione dati
 button.addEventListener('click', function(){
     const KmsValue =Kms.value;
@@ -68,9 +72,19 @@ button.addEventListener('click', function(){
 
     const fullName = `${firstName} ${lastName}`;
     console.log('Nome completo passeggero:', fullName);
+    // voglio che ad ogni click venga generato un numero casuale per la mia carrozza
+    const randomNumber = Math.floor( Math.random() * 5 ) + 1;
+    console.log('numero random', randomNumber);
 
     let ticketPrice =(0.21 * KmsValue);
     let typeTicket = '';
+    // rivedere devi geneare sequenza numeri random che inizi con 9
+    const prefix = '9';
+    randomCode = Math.floor( Math.random() * 5) + 1;
+    console.log(prefix);
+    codeTicket =`${randomCode}`;
+    console.log(codeTicket);
+
     
     if (ageValue >= 65 ) {
     // sconto del 40%
@@ -94,8 +108,10 @@ button.addEventListener('click', function(){
     console.log(message , finalMessage);
     // paragraph.innerHTML = message + "<br>"+ finalMessage;
     passenger.innerText = fullName;
-    priceTicket.innerText = finalPrice;
     ticket.innerText = typeTicket;
+    carriageNumber.innerText = randomNumber;
+    // codeCp.innerText = codeTicket;
+    priceTicket.innerText = finalPrice;
 
 })
 buttonReset.addEventListener('click', function(){
